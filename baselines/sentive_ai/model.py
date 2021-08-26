@@ -126,8 +126,7 @@ class MyMetaLearner(MetaLearner):
         for idx, (episode, source_id) in iterate_dataset(meta_train_generator, N_EPISODES):
             episode = [a.numpy() for a in episode]
             print('Length of the tuple describing an episode : {} \n'.format(len(episode)))
-            # plot_episode(support_images=episode[0], support_class_ids=episode[2],
-            #         query_images=episode[3], query_class_ids=episode[5])
+
         return MyLearner()
 
 
@@ -202,9 +201,10 @@ class MyPredictor(Predictor):
         dummy_pred = tf.constant([[1.0, 0, 0, 0 ,0]], dtype=tf.float32)
         dummy_pred = tf.broadcast_to(dummy_pred, (95, 5))
 
+
         # create the iterator
-        for batch in dataset_test.take(1):
-            print([arr.numpy() for arr in batch])
+        # for batch in dataset_test.take(1):
+        #     print([arr.numpy() for arr in batch])
 
 
         return dummy_pred
