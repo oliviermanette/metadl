@@ -126,8 +126,7 @@ class MyMetaLearner(MetaLearner):
         for idx, (episode, source_id) in iterate_dataset(meta_train_generator, N_EPISODES):
             episode = [a.numpy() for a in episode]
             print('Length of the tuple describing an episode : {} \n'.format(len(episode)))
-            plot_episode(support_images=episode[0], support_class_ids=episode[2],
-                    query_images=episode[3], query_class_ids=episode[5])
+
         return MyLearner()
 
 
